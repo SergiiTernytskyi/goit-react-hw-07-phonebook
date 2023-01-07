@@ -17,12 +17,12 @@ export const Contacts = () => {
 
   return (
     <div>
-      {/* <FilterForm /> */}
+      <FilterForm />
       {isLoading && <div>Loading...</div>}
       {items.length === 0 && !isLoading && !error && (
         <div>There is no contacts yet</div>
       )}
-      {items.length > 0 && !isLoading && <ContactList />}
+      {items.length > 0 && <ContactList />}
       {error && <div>{error}</div>}
     </div>
   );

@@ -1,8 +1,10 @@
-import { Contacts } from 'pages/Contacts';
+import { Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+
+import { Contacts } from 'pages/ContactsPage';
 import { CreateContact } from 'pages/CreateContact';
 import { Home } from 'pages/Home';
-import { Toaster } from 'react-hot-toast';
-import { Route, Routes } from 'react-router-dom';
+
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
 export const App = () => {

@@ -1,5 +1,5 @@
 import { Formik, ErrorMessage, Form, Field } from 'formik';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import { nanoid } from '@reduxjs/toolkit';
 import * as yup from 'yup';
 import 'yup-phone';
@@ -50,39 +50,41 @@ export const ContactsForm = () => {
   const phoneId = nanoid();
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={submitHandler}
-      validationSchema={contactsSchema}
-    >
-      <Form autoComplete="off">
-        <div>
-          <label htmlFor={nameId}>
-            Name
-            <Field
-              id={nameId}
-              type="text"
-              name="name"
-              placeholder="Enter name"
-            />
-          </label>
+    <>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={submitHandler}
+        validationSchema={contactsSchema}
+      >
+        <Form autoComplete="off">
+          <div>
+            <label htmlFor={nameId}>
+              Name
+              <Field
+                id={nameId}
+                type="text"
+                name="name"
+                placeholder="Enter name"
+              />
+            </label>
 
-          <label htmlFor={phoneId}>
-            Phone number
-            <Field
-              id={phoneId}
-              type="tel"
-              name="phone"
-              placeholder="Enter phone number"
-            />
-          </label>
-        </div>
+            <label htmlFor={phoneId}>
+              Phone number
+              <Field
+                id={phoneId}
+                type="tel"
+                name="phone"
+                placeholder="Enter phone number"
+              />
+            </label>
+          </div>
 
-        <ErrorMessage component={Error} name="name" />
-        <ErrorMessage component={Error} name="phone" />
+          <ErrorMessage component={Error} name="name" />
+          <ErrorMessage component={Error} name="phone" />
 
-        <button type="submit">Add contact</button>
-      </Form>
-    </Formik>
+          <button type="submit">Add contact</button>
+        </Form>
+      </Formik>
+    </>
   );
 };

@@ -3,7 +3,7 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 
-export const ContactItem = ({ id, name, phone }) => {
+export const ContactItem = ({ contact: { id, name, phone } }) => {
   const dispatch = useDispatch();
 
   const deleteHandler = () => {
@@ -11,17 +11,19 @@ export const ContactItem = ({ id, name, phone }) => {
   };
 
   return (
-    <li>
+    <div>
       <span>{name}:</span>
       <span>{phone}</span>
       <button type="button" aria-label="delete" onClick={deleteHandler}>
         <FaRegTrashAlt size={25} />
       </button>
-    </li>
+    </div>
   );
 };
 
 ContactItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  contact: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+  }).isRequired,
 };
