@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-07-phonebook/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-07-phonebook/static/js/main.e238d3b0.js",
+    "main.css": "/goit-react-hw-07-phonebook/static/css/main.c3d5249d.css",
+    "main.js": "/goit-react-hw-07-phonebook/static/js/main.5412a252.js",
+    "static/js/33.b83a323b.chunk.js": "/goit-react-hw-07-phonebook/static/js/33.b83a323b.chunk.js",
+    "static/js/56.987dbccd.chunk.js": "/goit-react-hw-07-phonebook/static/js/56.987dbccd.chunk.js",
+    "static/js/214.6bcab0b5.chunk.js": "/goit-react-hw-07-phonebook/static/js/214.6bcab0b5.chunk.js",
+    "static/js/893.b8f836af.chunk.js": "/goit-react-hw-07-phonebook/static/js/893.b8f836af.chunk.js",
+    "static/js/389.49e77af8.chunk.js": "/goit-react-hw-07-phonebook/static/js/389.49e77af8.chunk.js",
+    "static/media/Phonebook.jpg": "/goit-react-hw-07-phonebook/static/media/Phonebook.3108549d7f7bf6708874.jpg",
     "index.html": "/goit-react-hw-07-phonebook/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-07-phonebook/static/css/main.7acaea2f.css.map",
-    "main.e238d3b0.js.map": "/goit-react-hw-07-phonebook/static/js/main.e238d3b0.js.map"
+    "main.c3d5249d.css.map": "/goit-react-hw-07-phonebook/static/css/main.c3d5249d.css.map",
+    "main.5412a252.js.map": "/goit-react-hw-07-phonebook/static/js/main.5412a252.js.map",
+    "33.b83a323b.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/33.b83a323b.chunk.js.map",
+    "56.987dbccd.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/56.987dbccd.chunk.js.map",
+    "214.6bcab0b5.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/214.6bcab0b5.chunk.js.map",
+    "893.b8f836af.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/893.b8f836af.chunk.js.map",
+    "389.49e77af8.chunk.js.map": "/goit-react-hw-07-phonebook/static/js/389.49e77af8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.e238d3b0.js"
+    "static/css/main.c3d5249d.css",
+    "static/js/main.5412a252.js"
   ]
 }
