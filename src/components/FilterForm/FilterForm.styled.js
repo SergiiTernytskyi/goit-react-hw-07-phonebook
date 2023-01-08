@@ -36,7 +36,7 @@ export const Input = styled.input`
     outline-color: ${p => p.theme.colors.secondary};
   }
 
-  :valid,
+  :valid ~ span,
   :focus ~ span {
     padding: 0 ${props => props.theme.space[2]}px;
     font-size: ${props => props.theme.fontSizes.s}px;
