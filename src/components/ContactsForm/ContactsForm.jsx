@@ -1,13 +1,13 @@
 import { Formik, ErrorMessage } from 'formik';
 import toast from 'react-hot-toast';
-import { nanoid } from '@reduxjs/toolkit';
 import * as yup from 'yup';
 import 'yup-phone';
 import {
   AddButton,
   Error,
   Input,
-  Label,
+  InputWrapper,
+  Placeholder,
   StyledForm,
   Wrapper,
 } from './ContactsForm.styled';
@@ -58,9 +58,6 @@ export const ContactsForm = () => {
     navigate('/contacts');
   };
 
-  const nameId = nanoid();
-  const phoneId = nanoid();
-
   return (
     <>
       <Formik
@@ -70,26 +67,16 @@ export const ContactsForm = () => {
       >
         <StyledForm autoComplete="off">
           <Wrapper>
-            <Label htmlFor={nameId}>
-              Contact name
-              <Input
-                id={nameId}
-                type="text"
-                name="name"
-                placeholder="Enter name"
-              />
-            </Label>
-
-            <Label htmlFor={phoneId}>
-              Phone number
-              <Input
-                id={phoneId}
-                type="tel"
-                name="phone"
-                placeholder="Enter phone number"
-              />
-            </Label>
+            <InputWrapper>
+              <Input type="text" name="name" required="required" />
+              <Placeholder>Contact name</Placeholder>
+            </InputWrapper>
+            <InputWrapper>
+              <Input type="tel" name="phone" required="required" />
+              <Placeholder>Phone number</Placeholder>
+            </InputWrapper>
           </Wrapper>
+
           <AddButton type="submit">Add contact</AddButton>
           <ErrorMessage component={Error} name="name" />
           <ErrorMessage component={Error} name="phone" />

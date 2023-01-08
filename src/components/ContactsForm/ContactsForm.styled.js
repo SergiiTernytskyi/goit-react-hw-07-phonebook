@@ -18,6 +18,10 @@ export const Wrapper = styled.div`
   margin-bottom: ${p => p.theme.space[4]}px;
 `;
 
+export const InputWrapper = styled.div`
+  position: relative;
+`;
+
 export const Label = styled.label`
   min-width: 250px;
   flex-basis: calc(100% / 2 - ${p => p.theme.space[3]}px);
@@ -31,7 +35,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled(Field)`
-  padding: ${p => p.theme.space[2]}px;
+  padding: ${p => p.theme.space[2] + 2}px;
   width: 100%;
 
   font-size: ${p => p.theme.fontSizes.l}px;
@@ -41,11 +45,35 @@ export const Input = styled(Field)`
   border: 1px solid ${p => p.theme.colors.text};
   border-radius: ${p => p.theme.radii.normal};
 
-  :hover,
+  transition: all 250ms ease-out;
+
+  :valid,
   :focus {
     border: 1px solid ${p => p.theme.colors.secondary};
     outline-color: ${p => p.theme.colors.secondary};
   }
+  :valid ~ span,
+  :focus ~ span {
+    padding: 0 ${props => props.theme.space[2]}px;
+    font-size: ${props => props.theme.fontSizes.s}px;
+    font-weight: ${props => props.theme.fontWeights.bold};
+    color: ${props => props.theme.colors.secondary};
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background-color: ${props => props.theme.colors.background};
+    border-left: 1px solid ${props => props.theme.colors.secondary};
+    border-right: 1px solid ${props => props.theme.colors.secondary};
+    transform: translateX(20px) translateY(-8px);
+  }
+`;
+
+export const Placeholder = styled.span`
+  position: absolute;
+  left: 0;
+  padding: ${props => props.theme.space[2]}px;
+  pointer-events: none;
+  color: ${props => props.theme.colors.text};
+  transition: all 250ms ease-out;
 `;
 
 export const AddButton = styled.button`
