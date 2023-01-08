@@ -5,7 +5,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 60px;
+  min-height: 80px;
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
   padding-top: ${p => p.theme.space[2]}px;
