@@ -2,6 +2,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContacts } from 'redux/filterSlice';
 import { selectFilter } from 'redux/selectors';
+import { Input, Placeholder, Wrapper } from './FilterForm.styled';
 
 export const FilterForm = () => {
   const dispatch = useDispatch();
@@ -15,16 +16,16 @@ export const FilterForm = () => {
   const filterId = nanoid();
 
   return (
-    <div>
-      <label htmlFor={filterId}>Search contacts by name</label>
-      <input
+    <Wrapper>
+      <Input
         id={filterId}
         type="text"
         name="filter"
-        placeholder="Enter contact name"
+        required="required"
         onChange={inputHandler}
         value={filter}
       />
-    </div>
+      <Placeholder>Contact name</Placeholder>
+    </Wrapper>
   );
 };

@@ -1,11 +1,20 @@
-import { Formik, ErrorMessage, Form, Field } from 'formik';
-// import toast from 'react-hot-toast';
+import { Formik, ErrorMessage } from 'formik';
+import toast from 'react-hot-toast';
 import { nanoid } from '@reduxjs/toolkit';
 import * as yup from 'yup';
 import 'yup-phone';
-import { Error } from './ContactsForm.styled';
-import { useDispatch } from 'react-redux';
+import {
+  AddButton,
+  Error,
+  Input,
+  Label,
+  StyledForm,
+  Wrapper,
+} from './ContactsForm.styled';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
+import { useNavigate } from 'react-router-dom';
 
 const contactsSchema = yup.object().shape({
   name: yup
@@ -27,7 +36,8 @@ const initialValues = { name: '', phone: '' };
 
 export const ContactsForm = () => {
   const dispatch = useDispatch();
-  //   const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
+  const navigate = useNavigate();
 
   const submitHandler = ({ name, phone }, { resetForm }) => {
     const normilizedContacts = {
@@ -35,15 +45,17 @@ export const ContactsForm = () => {
       phone,
     };
 
-    // if (
-    //   contacts.find(
-    //     contact => contact.name.toLowerCase() === name.toLowerCase().trim()
-    //   )
-    // ) {
-    //   return toast.error(`${name} is already in your contacts`);
-    // }
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase().trim()
+      )
+    ) {
+      return toast.error(`${name} is already in your contacts`);
+    }
+
     dispatch(addContact(normilizedContacts));
     resetForm();
+    navigate('/contacts');
   };
 
   const nameId = nanoid();
@@ -56,34 +68,32 @@ export const ContactsForm = () => {
         onSubmit={submitHandler}
         validationSchema={contactsSchema}
       >
-        <Form autoComplete="off">
-          <div>
-            <label htmlFor={nameId}>
-              Name
-              <Field
+        <StyledForm autoComplete="off">
+          <Wrapper>
+            <Label htmlFor={nameId}>
+              Contact name
+              <Input
                 id={nameId}
                 type="text"
                 name="name"
                 placeholder="Enter name"
               />
-            </label>
+            </Label>
 
-            <label htmlFor={phoneId}>
+            <Label htmlFor={phoneId}>
               Phone number
-              <Field
+              <Input
                 id={phoneId}
                 type="tel"
                 name="phone"
                 placeholder="Enter phone number"
               />
-            </label>
-          </div>
-
+            </Label>
+          </Wrapper>
+          <AddButton type="submit">Add contact</AddButton>
           <ErrorMessage component={Error} name="name" />
           <ErrorMessage component={Error} name="phone" />
-
-          <button type="submit">Add contact</button>
-        </Form>
+        </StyledForm>
       </Formik>
     </>
   );

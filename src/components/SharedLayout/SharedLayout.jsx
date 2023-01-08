@@ -1,16 +1,17 @@
-import { Link, Outlet } from 'react-router-dom';
+import { AppBar } from 'components/AppBar/AppBar';
+import { AppFooter } from 'components/AppFooter/AppFooter';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Container } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/create-contact">Create Contact</Link>
-          <Link to="/contacts">Contacts</Link>
-        </nav>
-      </header>
-      <Outlet />
-    </div>
+    <Container>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+      <AppFooter />
+    </Container>
   );
 };
