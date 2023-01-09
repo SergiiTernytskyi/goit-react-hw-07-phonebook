@@ -20,31 +20,26 @@ export const Header = styled.header`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: ${p => p.theme.space[2]}px;
+    gap: ${p => p.theme.space[3]}px;
   }
 `;
 
 export const StyledLink = styled(NavLink)`
-  padding: ${p => p.theme.space[2]}px ${p => p.theme.space[3]}px;
-  border-radius: ${p => p.theme.radii.normal};
-  text-decoration: none;
-  color: ${p => p.theme.colors.primary};
+  position: relative;
+  padding: ${p => p.theme.space[2]}px 0;
 
-  background-color: ${p => p.theme.colors.text};
+  color: ${p => p.theme.colors.text};
   font-weight: ${p => p.theme.fontWeights.bold};
+  text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
 
   &.active {
     color: ${p => p.theme.colors.white};
-    background-color: ${p => p.theme.colors.primaryText};
-    box-shadow: ${p => p.theme.shadows.second};
   }
-
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     color: ${p => p.theme.colors.white};
-    background-color: ${p => p.theme.colors.secondary};
   }
 `;

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   align-self: stretch;
   justify-content: space-between;
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[3]}px;
-  min-width: 300px;
+  min-width: 250px;
   min-height: 50px;
   gap: 4px;
 
@@ -20,13 +20,13 @@ export const ContactName = styled.span`
   display: inline-block;
   color: ${p => p.theme.colors.text};
   font-weight: ${p => p.theme.fontWeights.bold};
-  min-width: 100px;
+  min-width: 75px;
 `;
 
 export const ContactPhone = styled.span`
   display: inline-block;
   color: ${p => p.theme.colors.text};
-  min-width: 100px;
+  min-width: 75px;
 `;
 
 export const IconButton = styled.button`
