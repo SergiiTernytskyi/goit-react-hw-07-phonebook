@@ -22,7 +22,7 @@ export const Info = styled.p`
   padding: ${p => p.theme.space[3]}px;
   width: 30%;
 
-  color: ${p => p.theme.colors.text};
+  color: ${p => p.theme.colors.secondary};
   font-size: ${p => p.theme.fontSizes.l}px;
   background-color: ${p => p.theme.colors.primary};
   border-radius: ${p => p.theme.radii.large};
